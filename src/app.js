@@ -3,11 +3,13 @@ import express from "express";
 import AdminRoutes from "./routers/admin.router.js";
 import UserRouters from './routers/user.router.js'
 import authRouters from "./routers/auth.router.js"
+import cors from "cors";
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
+app.use(cors());
 
 // Health check
 app.get("/", (req, res) => {
